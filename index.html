@@ -14,6 +14,29 @@
       text-align: center;
       padding-top: 80px;
     }
+      .kitty-wrapper {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.kitty-wave {
+  width: 160px;
+  animation: wave 2.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 20px rgba(255,182,193,0.5));
+}
+
+
+/* Machanie łapką */
+@keyframes wave {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(5deg); }
+  40%  { transform: rotate(-5deg); }
+  60%  { transform: rotate(5deg); }
+  80%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+    </style>
+    
 
     .menu {
       position: fixed;
@@ -95,7 +118,7 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-  </style>
+  
 
 </head>
 
@@ -114,6 +137,12 @@
     <p class="tagline">cute things are coming soon 🐾</p>
 
     <h2>Hej 🐱</h2>
+    <div class="kitty-wrapper">
+  <img
+    class="kitty-wave"
+    src="https://i.postimg.cc/FKNSLxDZ/IMG-0121.webp"
+    alt="machająca kotka">
+</div>
     <p>miło, że tu jesteś.<br>Coś pięknego już się szyje…</p>
 
     <div class="paws">🐾 ✦ 🐾 ✦ 🐾</div>
@@ -165,6 +194,13 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
+  <div class="kitty-wrapper">
+  <img 
+    src="https://i.postimg.cc/FKNSLxDZ/IMG-0121.webp"
+    alt="Noira Lab kitty"
+    class="kitty-wave"
+  >
+</div>
 
 </body>
 </html>
