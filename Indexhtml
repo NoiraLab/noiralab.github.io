@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOIRALAB</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding-top: 72px;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 56px;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .menu button {
+      border: 1px solid #ffb6c1;
+      color: #ffb6c1;
+      background: transparent;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .page {
+      display: none;
+      padding: 20px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .logo {
+      width: 240px;
+      margin-top: 10px;
+      filter: drop-shadow(0 0 30px rgba(255,182,193,.7));
+    }
+
+    .tagline {
+      color: #ffb6c1;
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .countdown div {
+      border: 1px solid #ffb6c1;
+      border-radius: 18px;
+      padding: 12px;
+      width: 70px;
+    }
+
+    .countdown span {
+      font-size: 22px;
+      display: block;
+    }
+
+    .sleepy-cat {
+      width: 180px;
+      margin-top: 30px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="menu">
+    <button onclick="showHome()">HOME</button>
+    <button onclick="showSets()">SETS</button>
+  </div>
+
+  <div id="home" class="page active">
+    <img src="logo.png" alt="NOIRALAB" class="logo" />
+    <div class="tagline">romantic darkness</div>
+
+    <div class="countdown">
+      <div><span id="days">0</span>days</div>
+      <div><span id="hours">0</span>hrs</div>
+      <div><span id="minutes">0</span>min</div>
+      <div><span id="seconds">0</span>sec</div>
+    </div>
+
+    <img src="sleepy-cat.png" alt="" class="sleepy-cat" />
+  </div>
+
+  <div id="sets" class="page">
+    <h2>SETS</h2>
+    <p>Coming soon…</p>
+  </div>
+
+  <script>
+    function showHome() {
+      document.getElementById("home").classList.add("active");
+      document.getElementById("sets").classList.remove("active");
+    }
+
+    function showSets() {
+      document.getElementById("sets").classList.add("active");
+      document.getElementById("home").classList.remove("active");
+    }
+
+    const dropDate = new Date("2025-02-01T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = dropDate - now;
+      if (diff <= 0) return;
+
+      document.getElementById("days").innerText =
+        Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText =
+        Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").innerText =
+        Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("seconds").innerText =
+        Math.floor((diff / 1000) % 60);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
