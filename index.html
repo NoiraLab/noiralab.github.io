@@ -1,166 +1,139 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NOIRALAB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noira Lab</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  text-align: center;
+    background: black;
+    color: white;
+    font-family: 'Playfair Display', serif;
 }
 
-.menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  background: #000;
-  z-index: 10;
+header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
 }
 
-.menu button {
-  background: transparent;
-  border: 1px solid #e3b7c8;
-  color: #e3b7c8;
-  padding: 10px 22px;
-  border-radius: 20px;
-  font-size: 14px;
+header a {
+    border: 1px solid #f3c1d9;
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: #f3c1d9;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.section {
-  display: none;
-  padding: 110px 20px 60px;
+section {
+    padding: 40px 20px;
 }
 
-.section.active {
-  display: block;
+/* HOME */
+.sets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.logo {
-  width: 220px;
-  margin: 0 auto 20px;
+.set {
+    border: 1px solid #333;
+    padding: 15px;
+    text-align: center;
 }
 
-.orders-btn {
-  margin: 40px auto;
-  width: 220px;
-  padding: 14px;
-  border-radius: 22px;
-  border: 1px solid #e3b7c8;
-  color: #e3b7c8;
+.set img {
+    width: 100%;
+    display: block;
 }
 
-.search {
-  margin: 20px auto;
-  width: 80%;
-  max-width: 300px;
+.set p {
+    margin-top: 15px;
+    font-size: 16px;
 }
 
-.search input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
+/* SETS PAGE */
+.sets-text {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+.sets-text h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-.card {
-  border: 1px solid #333;
-  padding: 10px;
+.sets-text em {
+    display: block;
+    margin-bottom: 30px;
 }
 
-.card img {
-  width: 100%;
-  opacity: 0.4;
+.sets-text p {
+    line-height: 1.8;
+    font-size: 16px;
 }
-
-.sparkle {
-  position: fixed;
-  font-size: 18px;
-  opacity: 0.4;
-}
-
-.s1 { top: 20%; left: 10%; }
-.s2 { top: 40%; right: 8%; }
-.s3 { bottom: 20%; left: 15%; }
-
 </style>
 </head>
 
 <body>
 
-<div class="menu">
-  <button onclick="show('home')">HOME</button>
-  <button onclick="show('sets')">SETS</button>
-</div>
+<header>
+    <a href="#home">HOME</a>
+    <a href="#sets">SETS</a>
+</header>
 
 <!-- HOME -->
-<div id="home" class="section active">
-  <img class="logo" src="https://i.postimg.cc/5tdhqXC2/logo-png.png" alt="NOIRALAB">
+<section id="home">
+    <div class="sets-grid">
 
-  <p>romantic darkness</p>
+        <div class="set">
+            <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+            <p>Set I – baby blue (niedostępny)</p>
+        </div>
 
-  <div class="orders-btn">Zamówienia – wkrótce</div>
+        <div class="set">
+            <img src="https://i.postimg.cc/bJ10vfW0/att-Zqy-ASGfk5d-T24t0r-UL-NAVeitvuu-Qxqyj-Vi0Ik-U-A0c.jpg">
+            <p>Set II – dark romantic (niedostępny)</p>
+        </div>
 
-  <div class="search">
-    <input placeholder="Wyszukaj set...">
-  </div>
+        <div class="set">
+            <img src="https://i.postimg.cc/D0FrJY3x/att-Uxvm-V57-Iscm54NLtf2ZL1-5fr-HM1xpd-Hz-OIFn-Hn-EM.jpg">
+            <p>Set III – sweetie red (niedostępny)</p>
+        </div>
 
-  <div class="grid">
-    <div class="card">
-      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-      <p>Set I (niedostępny)</p>
     </div>
-    <div class="card">
-      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-      <p>Set II (niedostępny)</p>
-    </div>
-    <div class="card">
-      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-      <p>Set III (niedostępny)</p>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- SETS -->
-<div id="sets" class="section">
-  <h1>SETS</h1>
-  <p>szyte z pasją</p>
+<section id="sets">
+    <div class="sets-text">
+        <h1>SETS</h1>
+        <em>szyte z pasją</em>
 
-  <div class="grid">
-    <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-    <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-    <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-  </div>
-</div>
-
-<div class="sparkle s1">✨🐈</div>
-<div class="sparkle s2">✨</div>
-<div class="sparkle s3">🐈</div>
-
-<script>
-function show(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-</script>
+        <p>
+            Materiały wysokiej jakości.<br><br>
+            Wszystko szyte w Polsce w polskich szwalniach.<br><br>
+            90% bawełna, 10% elastan – bardzo miękkie, wygodne
+            i służące na lata bluzy &lt;3<br><br>
+            Spodnie: 80% bawełna, 20% nylon – wygodne,
+            na gumce typu parachute.
+        </p>
+    </div>
+</section>
 
 </body>
 </html>
