@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Noira Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0f0f14;
+      color: #fff;
+      text-align: center;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0f0f14;
+      padding: 10px;
+      z-index: 10;
+    }
+
+    .menu button {
+      background: none;
+      border: 1px solid #ffb6c1;
+      color: #ffb6c1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .page {
+      display: none;
+      padding: 100px 20px 40px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .logo {
+      width: 260px;
+      filter: drop-shadow(0 0 30px rgba(255,182,193,0.8));
+    }
+
+    .tagline {
+      color: #ffb6c1;
+      margin-top: 10px;
+    }
+
+    .paws {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffb6c1;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .countdown div {
+      border: 1px solid #ffb6c1;
+      border-radius: 18px;
+      padding: 12px;
+      width: 70px;
+    }
+
+    .countdown span {
+      font-size: 22px;
+      display: block;
+    }
+
+    .sleepy-cat {
+      width: 180px;
+      margin-top: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+  <div class="menu">
+    <button onclick="showHome()">HOME</button>
+    <button onclick="showSets()">SETS
