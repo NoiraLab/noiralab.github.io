@@ -1,155 +1,166 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOIRALAB</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NOIRALAB</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding-top: 72px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-    .menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 56px;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      z-index: 1000;
-    }
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
 
-    .menu button {
-      border: 1px solid #ffb6c1;
-      color: #ffb6c1;
-      background: transparent;
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-    }
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background: #000;
+  z-index: 10;
+}
 
-    .page {
-      display: none;
-      padding: 20px;
-    }
+.menu button {
+  background: transparent;
+  border: 1px solid #e3b7c8;
+  color: #e3b7c8;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+}
 
-    .page.active {
-      display: block;
-    }
+.section {
+  display: none;
+  padding: 110px 20px 60px;
+}
 
-    .logo {
-      width: 240px;
-      margin-top: 10px;
-      filter: drop-shadow(0 0 30px rgba(255,182,193,.7));
-    }
+.section.active {
+  display: block;
+}
 
-    .tagline {
-      color: #ffb6c1;
-      font-size: 14px;
-      opacity: 0.8;
-      margin-top: 10px;
-    }
+.logo {
+  width: 220px;
+  margin: 0 auto 20px;
+}
 
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
+.orders-btn {
+  margin: 40px auto;
+  width: 220px;
+  padding: 14px;
+  border-radius: 22px;
+  border: 1px solid #e3b7c8;
+  color: #e3b7c8;
+}
 
-    .countdown div {
-      border: 1px solid #ffb6c1;
-      border-radius: 18px;
-      padding: 12px;
-      width: 70px;
-    }
+.search {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 300px;
+}
 
-    .countdown span {
-      font-size: 22px;
-      display: block;
-    }
+.search input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
 
-    .sleepy-cat {
-      width: 180px;
-      margin-top: 30px;
-      animation: float 4s ease-in-out infinite;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-  </style>
+.card {
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  opacity: 0.4;
+}
+
+.sparkle {
+  position: fixed;
+  font-size: 18px;
+  opacity: 0.4;
+}
+
+.s1 { top: 20%; left: 10%; }
+.s2 { top: 40%; right: 8%; }
+.s3 { bottom: 20%; left: 15%; }
+
+</style>
 </head>
 
 <body>
 
-  <div class="menu">
-    <button onclick="showHome()">HOME</button>
-    <button onclick="showSets()">SETS</button>
+<div class="menu">
+  <button onclick="show('home')">HOME</button>
+  <button onclick="show('sets')">SETS</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="section active">
+  <img class="logo" src="https://i.postimg.cc/5tdhqXC2/logo-png.png" alt="NOIRALAB">
+
+  <p>romantic darkness</p>
+
+  <div class="orders-btn">Zamówienia – wkrótce</div>
+
+  <div class="search">
+    <input placeholder="Wyszukaj set...">
   </div>
 
-  <div id="home" class="page active">
-    <img src="logo.png" alt="NOIRALAB" class="logo" />
-    <div class="tagline">romantic darkness</div>
-
-    <div class="countdown">
-      <div><span id="days">0</span>days</div>
-      <div><span id="hours">0</span>hrs</div>
-      <div><span id="minutes">0</span>min</div>
-      <div><span id="seconds">0</span>sec</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+      <p>Set I (niedostępny)</p>
     </div>
-
-    <img src="sleepy-cat.png" alt="" class="sleepy-cat" />
+    <div class="card">
+      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+      <p>Set II (niedostępny)</p>
+    </div>
+    <div class="card">
+      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+      <p>Set III (niedostępny)</p>
+    </div>
   </div>
+</div>
 
-  <div id="sets" class="page">
-    <h2>SETS</h2>
-    <p>Coming soon…</p>
+<!-- SETS -->
+<div id="sets" class="section">
+  <h1>SETS</h1>
+  <p>szyte z pasją</p>
+
+  <div class="grid">
+    <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+    <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+    <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
   </div>
+</div>
 
-  <script>
-    function showHome() {
-      document.getElementById("home").classList.add("active");
-      document.getElementById("sets").classList.remove("active");
-    }
+<div class="sparkle s1">✨🐈</div>
+<div class="sparkle s2">✨</div>
+<div class="sparkle s3">🐈</div>
 
-    function showSets() {
-      document.getElementById("sets").classList.add("active");
-      document.getElementById("home").classList.remove("active");
-    }
-
-    const dropDate = new Date("2025-02-01T00:00:00");
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = dropDate - now;
-      if (diff <= 0) return;
-
-      document.getElementById("days").innerText =
-        Math.floor(diff / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").innerText =
-        Math.floor((diff / (1000 * 60 * 60)) % 24);
-      document.getElementById("minutes").innerText =
-        Math.floor((diff / (1000 * 60)) % 60);
-      document.getElementById("seconds").innerText =
-        Math.floor((diff / 1000) % 60);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
