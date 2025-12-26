@@ -8,83 +8,85 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background: black;
-    color: white;
-    font-family: 'Playfair Display', serif;
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px;
+  text-align: center;
+  padding: 30px 20px;
 }
 
-header a {
-    border: 1px solid #f3c1d9;
-    padding: 10px 25px;
-    border-radius: 30px;
-    color: #f3c1d9;
-    text-decoration: none;
-    font-size: 14px;
+header img {
+  max-width: 160px;
+  margin-bottom: 20px;
+}
+
+nav button {
+  background: none;
+  border: 1px solid #f3c1d9;
+  color: #f3c1d9;
+  padding: 10px 22px;
+  margin: 5px;
+  border-radius: 30px;
+  font-size: 14px;
 }
 
 section {
-    padding: 40px 20px;
+  padding: 40px 20px;
+  display: none;
 }
 
-/* HOME */
-.sets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: auto;
+section.active {
+  display: block;
 }
 
-.set {
-    border: 1px solid #333;
-    padding: 15px;
-    text-align: center;
+.search {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.set img {
-    width: 100%;
-    display: block;
+.search input {
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: none;
 }
 
-.set p {
-    margin-top: 15px;
-    font-size: 16px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* SETS PAGE */
+.card {
+  border: 1px solid #333;
+  padding: 15px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
+
+.orders {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 .sets-text {
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
-}
-
-.sets-text h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.sets-text em {
-    display: block;
-    margin-bottom: 30px;
-}
-
-.sets-text p {
-    line-height: 1.8;
-    font-size: 16px;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
 }
 </style>
 </head>
@@ -92,48 +94,62 @@ section {
 <body>
 
 <header>
-    <a href="#home">HOME</a>
-    <a href="#sets">SETS</a>
+  <img src="https://i.postimg.cc/5tdhqXC2/logo-png.png" alt="Noira Lab logo">
+  <nav>
+    <button onclick="show('home')">HOME</button>
+    <button onclick="show('sets')">SETS</button>
+  </nav>
 </header>
 
-<!-- HOME -->
-<section id="home">
-    <div class="sets-grid">
+<section id="home" class="active">
 
-        <div class="set">
-            <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
-            <p>Set I – baby blue (niedostępny)</p>
-        </div>
+  <div class="search">
+    <input type="text" placeholder="Szukaj setu... (drop wkrótce)">
+  </div>
 
-        <div class="set">
-            <img src="https://i.postimg.cc/bJ10vfW0/att-Zqy-ASGfk5d-T24t0r-UL-NAVeitvuu-Qxqyj-Vi0Ik-U-A0c.jpg">
-            <p>Set II – dark romantic (niedostępny)</p>
-        </div>
-
-        <div class="set">
-            <img src="https://i.postimg.cc/D0FrJY3x/att-Uxvm-V57-Iscm54NLtf2ZL1-5fr-HM1xpd-Hz-OIFn-Hn-EM.jpg">
-            <p>Set III – sweetie red (niedostępny)</p>
-        </div>
-
+  <div class="grid">
+    <div class="card">
+      <img src="https://i.postimg.cc/fTDCJkw7/att-tbl-MVYRdpuj-8myui-N4NE4v8HYUz-BEMB6PW20Gt-Cn4.jpg">
+      <p>Baby Blue Noira Dres<br>(niedostępny)</p>
     </div>
+
+    <div class="card">
+      <img src="https://i.postimg.cc/bJ10vfW0/att-Zqy-ASGfk5d-T24t0r-UL-NAVeitvuu-Qxqyj-Vi0Ik-U-A0c.jpg">
+      <p>Dark Romantic Noira Dres<br>(niedostępny)</p>
+    </div>
+
+    <div class="card">
+      <img src="https://i.postimg.cc/D0FrJY3x/att-Uxvm-V57-Iscm54NLtf2ZL1-5fr-HM1xpd-Hz-OIFn-Hn-EM.jpg">
+      <p>Sweetie Red Hoodie Noira Dres<br>(niedostępny)</p>
+    </div>
+  </div>
+
+  <div class="orders">
+    ✨ Zamówienia – drop już wkrótce ✨
+  </div>
+
 </section>
 
-<!-- SETS -->
 <section id="sets">
-    <div class="sets-text">
-        <h1>SETS</h1>
-        <em>szyte z pasją</em>
+  <div class="sets-text">
+    <h2>SETS</h2>
+    <em>szyte z pasją</em><br><br>
 
-        <p>
-            Materiały wysokiej jakości.<br><br>
-            Wszystko szyte w Polsce w polskich szwalniach.<br><br>
-            90% bawełna, 10% elastan – bardzo miękkie, wygodne
-            i służące na lata bluzy &lt;3<br><br>
-            Spodnie: 80% bawełna, 20% nylon – wygodne,
-            na gumce typu parachute.
-        </p>
-    </div>
+    Materiały wysokiej jakości.<br><br>
+    Wszystko szyte w Polsce w polskich szwalniach.<br><br>
+    90% bawełna, 10% elastan – bardzo miękkie, wygodne
+    i służące na lata bluzy &lt;3<br><br>
+    Spodnie: 80% bawełna, 20% nylon – wygodne,
+    na gumce typu parachute.
+  </div>
 </section>
+
+<script>
+function show(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
